@@ -11,27 +11,27 @@
 const candidatosPresidente = {
 
     "10": {
-        nome: "João Silva",
+        nome: "Renato Silva",
         partido: "Partido Nacional",
-        foto: "imagens/presidente10.jpg"
+        foto: "imagens/renato.png"
     },
 
     "20": {
         nome: "Maria Santos",
         partido: "Partido da Democracia",
-        foto: "imagens/presidente20.jpg"
+        foto: "imagens/maria.png"
     },
 
     "30": {
-        nome: "Carlos Oliveira",
+        nome: "Beatriz Silva",
         partido: "Partido do Brasil",
-        foto: "imagens/presidente30.jpg"
+        foto: "imagens/beatriz.png"
     },
 
     "40": {
-        nome: "Ana Souza",
+        nome: "Carlos Souza",
         partido: "Partido Popular",
-        foto: "imagens/presidente40.jpg"
+        foto: "imagens/carlos.png"
     }
 
 };
@@ -40,27 +40,27 @@ const candidatosPresidente = {
 const candidatosGovernador = {
 
     "50": {
-        nome: "Pedro Almeida",
+        nome: "Julio Almeida",
         partido: "Partido Nacional",
-        foto: "imagens/governador50.jpg"
+        foto: "imagens/julio.png"
     },
 
     "60": {
-        nome: "Lucas Ferreira",
+        nome: "Gabriela Ferreira",
         partido: "Partido da Democracia",
-        foto: "imagens/governador60.jpg"
+        foto: "imagens/gabriela.png"
     },
 
     "70": {
-        nome: "Mariana Costa",
+        nome: "Augusto Costa",
         partido: "Partido do Brasil",
-        foto: "imagens/governador70.jpg"
+        foto: "imagens/augusto.png"
     },
 
     "80": {
-        nome: "Roberto Martins",
+        nome: "Soraia Martins",
         partido: "Partido Popular",
-        foto: "imagens/governador80.jpg"
+        foto: "imagens/soraia.png"
     }
 
 };
