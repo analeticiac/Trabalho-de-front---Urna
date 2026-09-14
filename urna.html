@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Protótipo de urna eletrônica acessível">
+
+    <title>Urna Eletrônica</title>
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="urna.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="cabecalho">
+
+        <div class="logo">
+    
+            <img
+                src="imagens/gov.br.webp"
+                alt="Logo da urna eletrônica"
+            >
+    
+            <div>
+                <strong>URNA </strong>
+                <small>ELETRÔNICA</small>
+            </div>
+        </div>
+
+        <button
+            class="btn-camera"
+            id="btnCamera"
+            onclick="abrirCamera()">
+
+            📷 Votar pela câmera
+
+        </button>
+
+    </header>
+
+
+    <!-- =====================================================
+         ÁREA PRINCIPAL
+    ====================================================== -->
+
+    <main class="urna-container">
+
+
+        <!-- =================================================
+             ÁREA DA URNA
+        ================================================== -->
+
+        <section class="urna">
+
+
+            <!-- =============================================
+                 TELA DA URNA
+            ============================================== -->
+
+            <div class="tela">
+
+                <div class="tela-cabecalho">
+
+                    <span id="tipoEleicao">
+                        PRESIDENTE
+                    </span>
+
+                </div>
+
+
+                <!-- =========================================
+                     INFORMAÇÕES DO CANDIDATO
+                ========================================== -->
+
+                <div class="candidato-area">
+
+                    <div class="foto-container">
+
+                        <img
+                            id="fotoCandidato"
+                            src=""
+                            alt="Foto do candidato">
+
+                    </div>
+
+
+                    <div class="dados-candidato">
+
+                        <h2 id="nomeCandidato">
+                            DIGITE O NÚMERO
+                        </h2>
+
+                        <p id="partidoCandidato">
+                            Escolha seu candidato
+                        </p>
+
+                        <div class="numero-display"
+                             id="numeroDisplay">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     MENSAGEM DE CONFIRMAÇÃO
+                ========================================== -->
+
+                <div
+                    class="mensagem-tela"
+                    id="mensagemTela">
+
+                    Use o teclado para votar
+
+                </div>
+
+
+                <!-- =========================================
+                     STATUS
+                ========================================== -->
+
+                <div class="status-votacao">
+
+                    <span id="statusTexto">
+                        VOTO PARA PRESIDENTE
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TECLADO
+            ================================================== -->
+
+            <div class="teclado">
+
+
+                <!-- LINHA 1 -->
+
+                <button
+                    class="tecla"
+                    data-numero="1"
+                    onclick="pressionarTecla('1')">
+
+                    1
+
+                </button>
+
+
+                <button
+                    class="tecla"
+                    data-numero="2"
+                    onclick="pressionarTecla('2')">
+
+                    2
+
+                </button>
+
+
+                <button
+                    class="tecla"
+                    data-numero="3"
+                    onclick="pressionarTecla('3')">
+
+                    3
+
+                </button>
+
+
+                <!-- LINHA 2 -->
+
+                <button
+                    class="tecla"
+                    data-numero="4"
+                    onclick="pressionarTecla('4')">
+
+                    4
+
+                </button>
+
+
+                <button
+                    class="tecla"
+                    data-numero="5"
+                    onclick="pressionarTecla('5')">
+
+                    5
+
+                </button>
+
+
+                <button
+                    class="tecla"
+                    data-numero="6"
+                    onclick="pressionarTecla('6')">
+
+                    6
+
+                </button>
+
+
+                <!-- LINHA 3 -->
+
+                <button
+                    class="tecla"
+                    data-numero="7"
+                    onclick="pressionarTecla('7')">
+
+                    7
+
+                </button>
+
+
+                <button
+                    class="tecla"
+                    data-numero="8"
+                    onclick="pressionarTecla('8')">
+
+                    8
+
+                </button>
+
+
+                <button
+                    class="tecla"
+                    data-numero="9"
+                    onclick="pressionarTecla('9')">
+
+                    9
+
+                </button>
+
+
+                <!-- LINHA 4 -->
+
+                <button
+                    class="tecla tecla-zero"
+                    data-numero="0"
+                    onclick="pressionarTecla('0')">
+
+                    0
+
+                </button>
+
+
+                <!-- BOTÕES DE CONTROLE -->
+
+                <button
+                    class="tecla branco"
+                    onclick="corrigirVoto()">
+
+                    BRANCO
+
+                </button>
+
+
+                <button
+                    class="tecla confirma"
+                    onclick="confirmarVoto()">
+
+                    CONFIRMA
+
+                </button>
+
+
+                <button
+                    class="tecla corrige"
+                    onclick="corrigirVoto()">
+
+                    CORRIGE
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PAINEL DA CÂMERA
+        ================================================== -->
+
+        <section
+            class="camera-area"
+            id="cameraArea">
+
+            <div class="camera-header">
+
+                <h2>🖐️ Votação pela câmera</h2>
+
+                <button
+                    onclick="fecharCamera()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+
+            <div class="camera-video">
+
+                <video
+                    id="videoCamera"
+                    autoplay
+                    muted
+                    playsinline>
+                </video>
+
+
+                <!-- PONTO QUE SEGUE O DEDO -->
+
+                <div
+                    id="ponteiroDedo"
+                    class="ponteiro-dedo">
+
+                    ☝️
+
+                </div>
+
+            </div>
+
+
+            <div class="camera-instrucoes">
+
+                <strong>Como votar usando a câmera</strong>
+
+                <p>
+                    1. Mostre sua mão para a câmera.
+                </p>
+
+                <p>
+                    2. Use o dedo indicador para apontar.
+                </p>
+
+                <p>
+                    3. Aproxime o indicador e o polegar
+                    para pressionar o botão.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL DE FINALIZAÇÃO
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="modalFinal">
+
+        <div class="modal-conteudo">
+
+            <div class="icone-final">
+                ✓
+            </div>
+
+            <h2>
+                Votação finalizada!
+            </h2>
+
+            <p>
+                Agradecemos pelo seu voto!
+            </p>
+
+            <button
+                onclick="novaVotacao()">
+
+                NOVA VOTAÇÃO
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         VLibras
+    ====================================================== -->
+
+    <div vw class="enabled">
+
+        <div vw-access-button
+             class="active">
+        </div>
+
+        <div vw-plugin-wrapper>
+
+            <div class="vw-plugin-top-wrapper"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         BIBLIOTECA VLibras
+    ====================================================== -->
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js">
+    </script>
+
+
+    <script>
+
+        new window.VLibras.Widget(
+            'https://vlibras.gov.br/app'
+        );
+
+    </script>
+
+
+    <!-- =====================================================
+         MEDIAPIPE - DETECÇÃO DA MÃO
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js">
+    </script>
+
+
+    <!-- =====================================================
+         JAVASCRIPT DA URNA
+    ====================================================== -->
+
+    <script src="urna.js"></script>
+
+</body>
+
+</html>
+

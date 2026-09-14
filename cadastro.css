@@ -1,0 +1,1194 @@
+/* ============================================================
+   CADASTRO DO ELEITOR
+   cadastro.css
+
+   CSS organizado do cadastro.
+   Nenhuma funcionalidade foi alterada.
+============================================================ */
+
+
+/* ============================================================
+   RESET
+============================================================ */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+/* ============================================================
+   CONFIGURAÇÕES GERAIS
+============================================================ */
+
+html {
+
+    min-height: 100%;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 110px 20px 30px;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8e8e8,
+            #e8e8e8,
+            #e8e8e8
+        );
+
+}
+
+
+/* ============================================================
+   MENU FIXO DO CADASTRO
+============================================================ */
+
+.menu-cadastro {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 80px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    box-shadow:
+        0 3px 15px
+        rgba(0, 0, 0, 0.15);
+
+    z-index: 99999;
+
+}
+
+
+/* ============================================================
+   LOGO
+============================================================ */
+
+.logo-cadastro {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+}
+
+
+/* ============================================================
+   IMAGEM GOV.BR
+============================================================ */
+
+.logo-cadastro img {
+
+    width: 100px;
+
+    height: 100px;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+/* ============================================================
+   TEXTO DA LOGO
+============================================================ */
+
+.texto-logo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    line-height: 1.1;
+
+}
+
+
+/* ============================================================
+   URNA
+============================================================ */
+
+.texto-logo strong {
+
+    font-size: 19px;
+
+    color: #111111;
+
+}
+
+
+/* ============================================================
+   ELETRÔNICA
+============================================================ */
+
+.texto-logo small {
+
+    font-size: 11px;
+
+    color: #555555;
+
+}
+
+
+/* ============================================================
+   CONTROLES DO MENU
+============================================================ */
+
+.controles-cadastro {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+}
+
+
+/* ============================================================
+   BOTÕES DO MENU
+============================================================ */
+
+.controles-cadastro button {
+
+    height: 42px;
+
+    min-width: 42px;
+
+    padding: 0 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #0b3d91;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* ============================================================
+   HOVER DOS BOTÕES
+============================================================ */
+
+.controles-cadastro button:hover {
+
+    background: #1976d2;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ============================================================
+   FOCO DOS BOTÕES
+============================================================ */
+
+.controles-cadastro button:focus {
+
+    outline: 3px solid #42a5f5;
+
+    outline-offset: 2px;
+
+}
+
+
+/* ============================================================
+   BOTÃO DA CÂMERA
+============================================================ */
+
+#botaoCamera {
+
+    min-width: 209px;
+
+    padding: 0 18px;
+
+    white-space: nowrap;
+
+}
+
+
+/* ============================================================
+   CONTAINER DO FORMULÁRIO
+============================================================ */
+
+.container {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 40px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.20);
+
+}
+
+
+/* ============================================================
+   TÍTULO
+============================================================ */
+
+h1 {
+
+    text-align: center;
+
+    color: #00050c;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* ============================================================
+   SUBTÍTULO
+============================================================ */
+
+.subtitulo {
+
+    text-align: center;
+
+    color: #666666;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ============================================================
+   CAMPOS
+============================================================ */
+
+.campo {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ============================================================
+   LABEL
+============================================================ */
+
+label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: #333333;
+
+}
+
+
+/* ============================================================
+   INPUT
+============================================================ */
+
+input {
+
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    border: 2px solid #dddddd;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+
+}
+
+
+/* ============================================================
+   INPUT EM FOCO
+============================================================ */
+
+input:focus {
+
+    border-color: #4e555c;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(25, 118, 210, 0.15);
+
+}
+
+
+/* ============================================================
+   LIMITE DOS CAMPOS
+============================================================ */
+
+.limite {
+
+    display: block;
+
+    margin-top: 5px;
+
+    text-align: right;
+
+    font-size: 12px;
+
+    color: #777777;
+
+}
+
+
+/* ============================================================
+   BOTÃO CONFIRMAR
+============================================================ */
+
+#botaoConfirmar {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b3d91,
+            #1976d2
+        );
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* ============================================================
+   BOTÃO CONFIRMAR DESABILITADO
+============================================================ */
+
+#botaoConfirmar:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ============================================================
+   POP-UP DE MENSAGEM
+============================================================ */
+
+#mensagem {
+
+    display: none;
+
+    position: fixed;
+
+    top: 105px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    min-width: 320px;
+
+    max-width: 90%;
+
+    padding: 16px 25px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.25);
+
+    z-index: 999999;
+
+}
+
+
+/* ============================================================
+   POP-UP DE SUCESSO
+============================================================ */
+
+#mensagem.sucesso {
+
+    display: block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b3d91,
+            #1976d2
+        );
+
+    color: #ffffff;
+
+}
+
+
+/* ============================================================
+   POP-UP DE ERRO
+============================================================ */
+
+#mensagem.erro {
+
+    display: block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c62828,
+            #ef5350
+        );
+
+    color: #ffffff;
+
+}
+
+
+/* ============================================================
+   ANIMAÇÃO DO POP-UP
+============================================================ */
+
+#mensagem {
+
+    animation:
+        aparecerMensagem
+        0.3s ease;
+
+}
+
+
+@keyframes aparecerMensagem {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateY(-20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+    }
+
+}
+
+
+/* ============================================================
+   IFRAME
+============================================================ */
+
+#iframeEnvio {
+
+    display: none;
+
+}
+
+
+/* ============================================================
+   CÂMERA
+============================================================ */
+
+#cameraArea {
+
+    position: fixed;
+
+    bottom: 95px;
+
+    left: 25px;
+
+    width: 360px;
+
+    max-width:
+        calc(100vw - 50px);
+
+    padding: 10px;
+
+    background: #111111;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.40);
+
+    display: none;
+
+    z-index: 99997;
+
+}
+
+
+/* ============================================================
+   CÂMERA ABERTA
+============================================================ */
+
+#cameraArea.aberta {
+
+    display: block;
+
+}
+
+
+/* ============================================================
+   VÍDEO
+============================================================ */
+
+#videoCamera {
+
+    width: 100%;
+
+    display: block;
+
+    border-radius: 12px;
+
+    transform: scaleX(-1);
+
+}
+
+
+/* ============================================================
+   BOTÃO FECHAR CÂMERA
+============================================================ */
+
+#fecharCamera {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #c62828;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* ============================================================
+   STATUS DA CÂMERA
+============================================================ */
+
+#statusCamera {
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    padding: 7px 3px 3px;
+
+}
+
+
+/* ============================================================
+   PONTEIRO VIRTUAL DO DEDO
+============================================================ */
+
+#ponteiroDedo {
+
+    position: fixed;
+
+    width: 24px;
+
+    height: 24px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            25,
+            118,
+            210,
+            0.90
+        );
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 0 15px
+        rgba(
+            25,
+            118,
+            210,
+            0.80
+        );
+
+    pointer-events: none;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    display: none;
+
+    z-index: 1000000;
+
+}
+
+
+/* ============================================================
+   DESTAQUE DO ELEMENTO APONTADO
+============================================================ */
+
+.cursor-dedo {
+
+    outline:
+        4px solid #1976d2 !important;
+
+    outline-offset:
+        4px !important;
+
+    box-shadow:
+        0 0 20px
+        rgba(
+            25,
+            118,
+            210,
+            0.65
+        ) !important;
+
+}
+
+
+/* ============================================================
+   ALTO CONTRASTE
+============================================================ */
+
+body.alto-contraste {
+
+    background: #000000 !important;
+
+    color: #ffffff !important;
+
+}
+
+
+/* ============================================================
+   CONTAINER NO ALTO CONTRASTE
+============================================================ */
+
+body.alto-contraste .container {
+
+    background: #000000 !important;
+
+    color: #ffffff !important;
+
+    border: 3px solid #ffffff;
+
+}
+
+
+/* ============================================================
+   MENU NO ALTO CONTRASTE
+============================================================ */
+
+body.alto-contraste .menu-cadastro {
+
+    background: #000000 !important;
+
+    border-bottom: 2px solid #ffffff;
+
+}
+
+
+/* ============================================================
+   TEXTO DA LOGO NO ALTO CONTRASTE
+============================================================ */
+
+body.alto-contraste .texto-logo strong {
+
+    color: #ffffff !important;
+
+}
+
+
+body.alto-contraste .texto-logo small {
+
+    color: #ffffff !important;
+
+}
+
+
+/* ============================================================
+   BOTÕES NO ALTO CONTRASTE
+============================================================ */
+
+body.alto-contraste .controles-cadastro button {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 2px solid #ffffff;
+
+}
+
+
+/* ============================================================
+   TÍTULO
+============================================================ */
+
+body.alto-contraste h1 {
+
+    color: #ffffff !important;
+
+}
+
+
+/* ============================================================
+   SUBTÍTULO
+============================================================ */
+
+body.alto-contraste .subtitulo {
+
+    color: #ffffff !important;
+
+}
+
+
+/* ============================================================
+   LABEL
+============================================================ */
+
+body.alto-contraste label {
+
+    color: #ffffff !important;
+
+}
+
+
+/* ============================================================
+   INPUT
+============================================================ */
+
+body.alto-contraste input {
+
+    background: #000000 !important;
+
+    color: #ffffff !important;
+
+    border: 2px solid #ffffff !important;
+
+}
+
+
+/* ============================================================
+   PLACEHOLDER
+============================================================ */
+
+body.alto-contraste input::placeholder {
+
+    color: #ffffff !important;
+
+}
+
+
+/* ============================================================
+   LIMITE
+============================================================ */
+
+body.alto-contraste .limite {
+
+    color: #ffffff !important;
+
+}
+
+
+/* ============================================================
+   BOTÃO CONFIRMAR
+============================================================ */
+
+body.alto-contraste #botaoConfirmar {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+}
+
+
+/* ============================================================
+   MENSAGEM DE SUCESSO
+============================================================ */
+
+body.alto-contraste #mensagem.sucesso {
+
+    background: #000000 !important;
+
+    color: #00ff00 !important;
+
+    border: 2px solid #00ff00;
+
+}
+
+
+/* ============================================================
+   MENSAGEM DE ERRO
+============================================================ */
+
+body.alto-contraste #mensagem.erro {
+
+    background: #000000 !important;
+
+    color: #ff4444 !important;
+
+    border: 2px solid #ff4444;
+
+}
+
+
+/* ============================================================
+   CÂMERA NO ALTO CONTRASTE
+============================================================ */
+
+body.alto-contraste #cameraArea {
+
+    background: #000000;
+
+    border: 2px solid #ffffff;
+
+}
+
+
+/* ============================================================
+   BOTÃO CÂMERA NO ALTO CONTRASTE
+============================================================ */
+
+body.alto-contraste #botaoCamera {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+}
+
+
+/* ============================================================
+   RESPONSIVO — TABLET
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .menu-cadastro {
+
+        padding: 0 15px;
+
+    }
+
+
+    .controles-cadastro {
+
+        gap: 5px;
+
+    }
+
+
+    .controles-cadastro button {
+
+        padding: 0 8px;
+
+    }
+
+
+    #botaoCamera {
+
+        min-width: auto;
+
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVO — CELULAR
+============================================================ */
+
+@media (max-width: 700px) {
+
+    body {
+
+        padding:
+            100px
+            15px
+            25px;
+
+    }
+
+
+    .menu-cadastro {
+
+        height: auto;
+
+        min-height: 75px;
+
+        padding:
+            10px
+            12px;
+
+        gap: 10px;
+
+    }
+
+
+    .logo-cadastro {
+
+        gap: 6px;
+
+    }
+
+
+    .logo-cadastro img {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .texto-logo strong {
+
+        font-size: 16px;
+
+    }
+
+
+    .texto-logo small {
+
+        font-size: 9px;
+
+    }
+
+
+    .controles-cadastro {
+
+        gap: 4px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
+
+    }
+
+
+    .controles-cadastro button {
+
+        min-width: 36px;
+
+        height: 38px;
+
+        padding: 0 8px;
+
+        font-size: 14px;
+
+    }
+
+
+    #botaoCamera {
+
+        min-width: 38px;
+
+        width: 38px;
+
+        padding: 0;
+
+        font-size: 0;
+
+    }
+
+
+    #botaoCamera::before {
+
+        content: "📷";
+
+        font-size: 18px;
+
+    }
+
+
+    .container {
+
+        padding: 25px;
+
+    }
+
+
+    h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    #cameraArea {
+
+        left: 15px;
+
+        bottom: 20px;
+
+        width:
+            calc(100vw - 30px);
+
+        max-width: none;
+
+    }
+
+
+    #mensagem {
+
+        top: 90px;
+
+        min-width: 280px;
+
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR PEQUENO
+============================================================ */
+
+@media (max-width: 450px) {
+
+    .menu-cadastro {
+
+        align-items: center;
+
+    }
+
+
+    .texto-logo {
+
+        display: none;
+
+    }
+
+
+    .controles-cadastro {
+
+        flex: 1;
+
+    }
+
+
+    .controles-cadastro button {
+
+        flex: 0 0 auto;
+
+    }
+
+
+    .container {
+
+        padding: 22px;
+
+    }
+
+}
