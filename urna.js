@@ -80,6 +80,7 @@ let votoGovernador = null;
 
 let cameraAtiva = false;
 
+
 /* ============================================================
    DADOS DO ELEITOR
    Recuperados do cadastro
@@ -670,6 +671,7 @@ function finalizarVotacao() {
         }
     )
 
+
     .catch(
         (erro) => {
 
@@ -847,6 +849,7 @@ function iniciarReconhecimentoDaMao(video) {
                 });
 
             },
+
 
             width: 640,
 
@@ -1217,118 +1220,16 @@ function verificarClique(
 
 /* ============================================================
    SOM FINAL DA URNA
-   Som eletrônico de confirmação/finalização
+   Usa o arquivo MP3 de confirmação do voto
 ============================================================ */
 
 function somFinalUrna() {
 
-    const audioContext =
-        new (
-            window.AudioContext ||
-            window.webkitAudioContext
-        )();
+    const audioConfirmacao =
+        new Audio("sons/confirma-urna.mp3");
 
+    audioConfirmacao.currentTime = 0;
 
-    const agora =
-        audioContext.currentTime;
-
-
-    function beep(
-        frequencia,
-        inicio,
-        duracao,
-        volume
-    ) {
-
-        const oscilador =
-            audioContext.createOscillator();
-
-
-        const ganho =
-            audioContext.createGain();
-
-
-        oscilador.type =
-            "sine";
-
-
-        oscilador.frequency.value =
-            frequencia;
-
-
-        ganho.gain.setValueAtTime(
-            0,
-            agora + inicio
-        );
-
-
-        ganho.gain.linearRampToValueAtTime(
-            volume,
-            agora + inicio + 0.01
-        );
-
-
-        ganho.gain.exponentialRampToValueAtTime(
-            0.001,
-            agora + inicio + duracao
-        );
-
-
-        oscilador.connect(
-            ganho
-        );
-
-
-        ganho.connect(
-            audioContext.destination
-        );
-
-
-        oscilador.start(
-            agora + inicio
-        );
-
-
-        oscilador.stop(
-            agora + inicio + duracao
-        );
-
-    }
-
-
-    /* ========================================================
-       SEQUÊNCIA ELETRÔNICA DE FINALIZAÇÃO
-    ======================================================== */
-
-    beep(
-        880,
-        0.00,
-        0.12,
-        0.20
-    );
-
-
-    beep(
-        660,
-        0.15,
-        0.12,
-        0.20
-    );
-
-
-    beep(
-        880,
-        0.30,
-        0.12,
-        0.20
-    );
-
-
-    beep(
-        1046,
-        0.45,
-        0.35,
-        0.25
-    );
+    audioConfirmacao.play();
 
 }
